@@ -42,19 +42,21 @@ namespace _1DV402.S2.L1A
             {
                 Console.WriteLine("Talet {0} är för lågt. Du har {1} gissningar kvar.", number, (MaxNumberOfGuesses - _count));
             }
-            else
+            else if (number > _number)
             {
                 Console.WriteLine("Talet {0} är för högt. Du har {1} gissningar kvar.", number, (MaxNumberOfGuesses - _count));
             }
-            if (number == _number)
+            else
             {
                 Console.WriteLine("Rätt gissat! Du klarade det på {0} försök.", _count);
                 return true;
             }
+            
             if (_count == MaxNumberOfGuesses)
             {
                 Console.WriteLine("Det hemliga talet är {0}.", _number);
             }
+            
             // return false eftersom det inte var lika mycket som det hemliga värdet
             return false;
         }
